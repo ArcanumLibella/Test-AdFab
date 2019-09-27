@@ -20,6 +20,67 @@ body {
       display: block;
     }
   }
+
+  &.is-hidden {
+    
+    .address-book {
+      visibility: hidden;
+    }
+
+    .card.is-clicked {
+      position: relative;
+      display: block;
+      // left: 50%;
+      // transform: translateX(-50%);
+      padding: 20px;
+      border-top: solid 22px $red;
+      border-radius: 10px;
+      visibility: visible;
+
+      @media screen and (min-width: $tablet-up) {
+        position: absolute;
+        padding: 25px;
+      }
+
+      .card {
+        &__profil {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+
+          @media screen and (min-width: $tablet-up) {
+            margin-left: 20px;
+          }
+        }
+
+        &__avatar {
+          width: 30px;
+        }
+
+        &__infos {
+          // font-size: rem(20px);
+          // line-height: rem(45px);
+
+          @media screen and (min-width: $tablet-up) {
+            margin-left: 80px;
+            font-size: rem(26px);
+            line-height: rem(45px);
+          }
+        }
+
+        &__socials {
+          display: flex;
+          justify-content: center;
+        }
+
+        &__social {
+          margin: 30px 8px 0;
+        }
+      }
+    }
+  }
 }
 
 .wrapper-content {
@@ -43,7 +104,7 @@ body {
   }
 }
 
-.book-address {
+.address-book {
   max-width: 895px;
   height: 100%;
   min-height: 650px;
@@ -125,19 +186,22 @@ body {
 
 .card {
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
   width: 100%;
   padding: 25px;
   box-shadow: $box-shadow;
   background-color: $bg-cards;
   border: solid 1px $borders;
+  cursor: pointer;
 
   @media screen and (min-width: $tablet-up) {
     width: 40%;
   }
 
-  @media screen and (min-width: $desktop-up) {
-    width: 180px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
   }
 
   &__profil {
@@ -155,9 +219,9 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-left: 30px;
-    width: 100px;
     font-family: $Regular;
     font-size: rem(15px);
+    line-height: 24px;
     color: $text;
   }
 
@@ -165,7 +229,7 @@ body {
     text-transform: uppercase;
   }
 
-  &__number {
-    line-height: 30px;
+  &__socials {
+    display: none;
   }
 }

@@ -47,6 +47,11 @@ const jSon = `{
       "name" :"Giles Posture",
       "email":"giles.posture@example.com",
       "phone": "0123456789"
+    },
+    {
+      "name" :"Hans Zimmer",
+      "email":"h.zimmer@example.com",
+      "phone": "0123456789"
     }
   ]
 }`;
@@ -60,56 +65,58 @@ const addressBook = myJson[addressBookObject];
 
 class AddressBook {
   constructor() {
-    this.cards = document.querySelectorAll('.card'); //NodeList
+    // this.cardsWrapper = document.querySelector('.cards'); //NodeList
+    // this.newCard = document.createElement('div');
 
-    [...this.cards].map( (card, cardIndex) => {
-      this.name = card.querySelector('.card__name');
-      this.phone = card.querySelector('.card__number');
-
-      this.fillAddressBook(cardIndex);
-      this.handleFilterLetters();
-      // this.createNewCard();
+    [...addressBook].map( contact => {
+      this.createNewCard(contact);
+      this.handleFilterLetters(contact);
     });
+    
+    // this.displayCard(newCard);
   }
 
-  fillAddressBook(cardIndex) {
-    [...addressBook].map( (contact, contactIndex) => {
-      if (cardIndex === contactIndex) {
-        this.name.innerHTML = contact.name;
-        this.phone.innerHTML = contact.phone;
-        console.log(this.name);
-        console.log(this.phone);
-      }
-    });
+  displayCard() {
+    // A refaire et attention au style avec page.is-hidden
+
   }
 
-  createNewCard() {
+  createNewCard(contact) {
     const cardsWrapper = document.querySelector('.cards'); //NodeList
     const newCard = document.createElement('div');
 
     newCard.className = 'card';
     cardsWrapper.appendChild(newCard);
     newCard.innerHTML = 
-      '<div class="card__profil">' +
-        '<img class="card__avatar" src="/profile.7033d4bd.png" alt="profil">' + 
-      '</div>' + 
-      '<div class="card__infos">' + 
-        '<h2 class="card__name">' + this.name + '</h2>' +
-        '<p class="card__number">' + this.phone + '</p>' +
+      '<div class="card__wrapper">' +
+        '<div class="card__profil">' +
+          '<img class="card__avatar" src="/profile.7033d4bd.png" alt="profil">' + 
+        '</div>' + 
+        '<div class="card__infos">' + 
+          '<h2 class="card__name">' + contact.name + '</h2>' +
+          '<p class="card__number">' + contact.phone + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card__socials">' +
+        '<a class="card__social" href="">' + '<img src="assets/icons/skype.png" alt="Skype">' + '</a>' +
+        '<a class="card__social" href="">' + '<img src="assets/icons/skype.png" alt="Skype">' + '</a>' +
+        '<a class="card__social" href="">' + '<img src="assets/icons/skype.png" alt="Skype">' + '</a>' +
       '</div>';
-    console.log(this.name, this.phone);
   }
 
-  handleFilterLetters() {
+  handleFilterLetters(contact, newCard) {
     const letters = document.querySelectorAll('.filter__letter'); // NodeList
-    let firstChar = this.name.innerHTML.slice(0, 1);
-    // console.log(firstChar);
+    // To retrieve first character of each contact
+    const firstChar = contact.name.slice(0, 1);
+    const card = document.querySelector('.card');
     
+    // To compare filter letter with firstChar of each contact
     [...letters].map( letter => {
-      // console.log(letter.innerHTML);
       letter.addEventListener('click', () => {
-        if (letter.innerHTML === firstChar) {
+        if (letter.innerHTML !== firstChar) {
           console.log('hehe');
+          console.log(card);
+          // card.classList.toggle('is-clicked');
         }
       })
     });
