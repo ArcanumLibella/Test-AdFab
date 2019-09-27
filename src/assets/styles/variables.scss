@@ -1,0 +1,26 @@
+// COLORS
+$white: #F7F7F7;
+$red: #ef4847;
+$bg-cards: #FFFFFF;
+$borders: rgb(233, 233, 233);
+$text: #b4bbc2;
+$box-shadow: 0px 1px 9.9px 0.1px rgba(187, 185, 185, 0.27);
+
+// FONTS
+$Regular: 'brandon_grotesque_regularRg';
+$Bold: 'brandon_grotesquebold';
+$Black: 'brandon_grotesqueblack';
+
+// FUNCTIONS
+@function rem($size) {
+  $remSize: $size / 16px;
+  
+  @return #{$remSize}rem;
+}
+
+// BREAKPOINTS
+$tablet-down: 767px;
+$tablet-up: 768px;
+$desktop-down: 999px;
+$desktop-up: 1000px;
+$big-desktop-up: 1440px;

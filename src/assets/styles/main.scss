@@ -1,0 +1,166 @@
+
+
+body {
+  font-family: $Regular;
+}
+
+.page {
+  width: 100vw;
+  height: 100%;
+  background: url('assets/img/background.jpg') no-repeat center center;
+  background-size: cover;
+
+  // @media screen and (min-width: $desktop-up) {
+  //   height: 100vh;
+  // }
+
+  &__header {
+    display: none;
+    width: 100vw;
+    height: 69px;
+    background-color: $white;
+
+    @media screen and (min-width: $desktop-up) {
+      display: block;
+    }
+  }
+}
+
+.wrapper-content {
+  padding: 0 15px 15px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+
+  font-family: $Bold;
+  font-size: rem(30px);
+  text-align: center;
+  color: $text;
+
+  @media screen and (min-width: $tablet-up) {
+    height: 210px;
+    font-size: rem(50px);
+  }
+}
+
+.book-address {
+  max-width: 895px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: $white;
+  border-top: solid 22px $red;
+  
+  @media screen and (min-width: $desktop-up) {
+    height: 600px;
+    overflow: hidden;
+  }
+}
+
+.form {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media screen and (min-width: $desktop-up) {
+    padding: 0 45px;
+    overflow: scroll;
+  }
+
+  &__fieldset {
+    text-align: center;
+  }
+}
+
+.input {
+  &__field {
+    width: 100%;
+    height: 42px;
+    margin: 30px auto;
+    // padding-left: 50px;
+    border: solid 1px #e9e9e9;
+    font-family: $Regular;
+    font-size: rem(15px);
+    color: $text;
+
+    @media screen and (min-width: $tablet-up) {
+      max-width: 465px;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto 50px;
+
+  &__letter {
+    margin: 0 6px;
+    font-family: $Black;
+    font-size: 20px;
+    color: $red;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 25px;
+  box-shadow: $box-shadow;
+  background-color: $bg-cards;
+  border: solid 1px $borders;
+
+  @media screen and (min-width: $tablet-up) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: $desktop-up) {
+    width: 180px;
+  }
+
+  &__profil {
+    padding: 15px;
+    border-radius: 50%;
+    border: solid 1px $red;
+  }
+
+  &__avatar {
+    width: 25px;
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+    font-family: $Regular;
+    font-size: rem(15px);
+    color: $text;
+  }
+
+  &__name {
+    text-transform: uppercase;
+  }
+
+  &__number {
+    line-height: 30px;
+  }
+}
