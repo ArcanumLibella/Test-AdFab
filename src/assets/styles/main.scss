@@ -10,10 +10,6 @@ body {
   background: url('assets/img/background.jpg') no-repeat center center;
   background-size: cover;
 
-  // @media screen and (min-width: $desktop-up) {
-  //   height: 100vh;
-  // }
-
   &__header {
     display: none;
     width: 100vw;
@@ -50,6 +46,7 @@ body {
 .book-address {
   max-width: 895px;
   height: 100%;
+  min-height: 650px;
   margin: 0 auto;
   border-radius: 10px;
   background-color: $white;
@@ -78,17 +75,24 @@ body {
 
 .input {
   &__field {
-    width: 100%;
+    width: 70%;
     height: 42px;
     margin: 30px auto;
-    // padding-left: 50px;
+    padding: 0 30px;
+    background-image:url(/assets/icons/loupe.png);
+    background-position: 5px;
+    background-repeat:no-repeat;
+
     border: solid 1px #e9e9e9;
     font-family: $Regular;
     font-size: rem(15px);
     color: $text;
 
     @media screen and (min-width: $tablet-up) {
+      width: 100%;
       max-width: 465px;
+      padding: 0 40px;
+      background-position: 12px;
     }
   }
 
@@ -109,18 +113,18 @@ body {
     font-family: $Black;
     font-size: 20px;
     color: $red;
+    cursor: pointer;
   }
 }
 
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .card {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
   width: 100%;
   padding: 25px;
@@ -150,6 +154,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 30px;
     width: 100px;
     font-family: $Regular;
     font-size: rem(15px);
